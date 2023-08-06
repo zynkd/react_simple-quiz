@@ -8,16 +8,21 @@ const initialState = {
   showResults: false,
   answers: shuffleAnswers(questions[0]),
   currentAnswer: '',
+  correctAnswersCounter: 0,
 };
 
 const reducer = (state, action) => {
-  console.log('action: ', action);
-
   switch (action.type) {
     case 'SELECT_ANSWER':
+      const correctAnswersCounter =
+        action.payload ===
+        state.questions[state.currentQuestionIndex].correctAnswer
+          ? state.correctAnswersCounter + 1
+          : state.correctAnswersCounter;
       return {
         ...state,
         currentAnswer: action.payload,
+        correctAnswersCounter,
       };
 
     case 'NEXT_QUESTION':
