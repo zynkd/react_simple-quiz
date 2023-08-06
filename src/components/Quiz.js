@@ -1,25 +1,11 @@
 import Question from './Question';
 import '../index.css';
-import { useReducer } from 'react';
-
-const initialState = {
-  currentQuestionIndex: 0,
-  questions: [],
-};
-
-const reducer = (state, action) => {
-  if ((action.type = 'NEXT_QUESTION')) {
-    return {
-      ...state,
-      currentQuestionIndex: state.currentQuestionIndex + 1,
-    };
-  }
-};
+import { useContext } from 'react';
+import { QuizContext } from '../contexts/quiz';
 
 const Quiz = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  console.log('state: ', state);
+  const [quizState, dispatch] = useContext(QuizContext);
+  console.log('state: ', quizState);
 
   return (
     <div className='quiz'>
