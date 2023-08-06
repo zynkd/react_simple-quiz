@@ -11,7 +11,7 @@ const reactQuestions = [
   {
     question: "What does JSX stand for?",
     incorrectAnswers: [
-      "JavaScript XML",
+      "Jigsaw XML",
       "JSON XML",
       "Java Syntax Extension",
     ],
