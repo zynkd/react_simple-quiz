@@ -93,6 +93,7 @@ div {
 }
 
 .next-button {
+  display: block;
   margin: 0 auto;
   color: #fff;
   background: #0b0e21;
@@ -104,6 +105,7 @@ div {
   cursor: pointer;
   text-align: center;
 }
+
 
 .score {
   background: #fff;

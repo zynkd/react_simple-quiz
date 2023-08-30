@@ -27,6 +27,7 @@ const Quiz = () => {
       {quizState.showResults && (
         <div className='results'>
           <div className='congratulations'>Congratulations</div>
+
           <div className='results-info'>
             <div>You have completed the quiz.</div>
             <div>
@@ -34,12 +35,13 @@ const Quiz = () => {
               {quizState.questions.length} right.
             </div>
           </div>
-          <div
+
+          <button
             className='next-button'
             onClick={() => dispatch({ type: 'RESTART' })}
           >
             Restart
-          </div>
+          </button>
         </div>
       )}
 
@@ -53,12 +55,12 @@ const Quiz = () => {
 
           <Question />
 
-          <div
+          <button
             className='next-button'
             onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
           >
             Next question
-          </div>
+          </button>
         </div>
       )}
     </div>
